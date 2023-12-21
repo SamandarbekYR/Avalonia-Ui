@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="400"
+             Background="Transparent"
+			 BorderBrush="Transparent"
+			 BorderThickness="0"
+			 x:Class="TestProject.CategoryControl" >
+	<UserControl.Styles>
+		<Style Selector="Label.Body">
+			<Setter Property="FontFamily" Value="JetBrains Mono"/>
+			<Setter Property="Foreground" Value="AntiqueWhite"/>
+			<Setter Property="FontSize" Value="16"/>
+		</Style>
+		<Style Selector="Label.Header">
+			<Setter Property="FontFamily" Value="JetBrains Mono"/>
+			<Setter Property="Foreground" Value="AntiqueWhite"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="24"/>
+		</Style>
+		<Style Selector="Border.Properties">
+			<Setter Property="Background" Value="Green"/>
+			<Setter Property="Width" Value="180"/>
+			<Setter Property="Height" Value="300"/>
+			<Setter Property="Margin" Value="2"/>
+			<Setter Property="CornerRadius" Value="15"/>
+		</Style>
+		<Style Selector="Image.Product">
+			<Setter Property="Margin" Value="0 -70 0 0"/>
+			<Setter Property="Width" Value="140"/>
+			<Setter Property="Height" Value="250"/>
+		</Style>
+	</UserControl.Styles>
+
+	<UserControl.Template>
+		<ControlTemplate>
+			<Border CornerRadius="{TemplateBinding CornerRadius}"
+					Margin="{TemplateBinding Margin}"
+					Classes ="Properties">
+				<Grid RowDefinitions="80,  Auto"
+					  ShowGridLines="True"
+					  Margin="5">
+					<Grid Grid.Row="0">
+						<Image x:Name="ProductImages" Source="avares://TestProject/Assets/Images/hamb.png"
+							   Classes ="Product"/>
+					</Grid>
+					<StackPanel Grid.Row="1"  HorizontalAlignment="Center">
+						<Label Content="Gamburger"
+							   Foreground="{TemplateBinding Foreground}"
+							   FontWeight="{TemplateBinding FontWeight}"
+							   Classes ="Header">
+						</Label>
+						<DockPanel Margin="0 20 0 0">
+							<StackPanel HorizontalAlignment="Left">
+								<Label
+									Content="Hello"
+									Foreground="{TemplateBinding Foreground}"
+									FontFamily="{TemplateBinding FontFamily}"
+									FontSize="{TemplateBinding FontSize}"
+									Classes ="Body"
+									/>
+							</StackPanel>
+							<StackPanel HorizontalAlignment="Right">
+								<Label
+									Content="Hello"
+									Foreground="{TemplateBinding Foreground}"
+									FontFamily="{TemplateBinding FontFamily}"
+									FontSize="{TemplateBinding FontSize}"
+									Classes ="Body"/>
+							</StackPanel>
+						</DockPanel>
+						<Label Content="235$"
+							   FontFamily="{TemplateBinding FontFamily}"
+							   Foreground="{TemplateBinding Foreground}"
+							   Margin="0 10 0 0"
+							   Classes ="Header">
+						</Label>
+					</StackPanel>
+				</Grid>
+			</Border>
+		</ControlTemplate>
+	</UserControl.Template>
+</UserControl>
